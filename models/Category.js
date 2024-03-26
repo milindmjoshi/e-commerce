@@ -3,6 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 const { DECIMAL } = require('sequelize');
 
+// Model for Category  
 class Category extends Model {}
 
 Category.init(
