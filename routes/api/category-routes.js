@@ -32,8 +32,14 @@ router.get('/:id', async (req, res) => {
         attributes: ['product_name']
       }],
     });
-    //console.log(categoryData);
-    res.status(200).json(categoryData);
+
+    if (!categoryData) {
+      res.status(404).json({ message: 'Category not found with id: ' + id });
+    }
+    else {
+      res.status(200).json(categoryData);
+    }
+     
   }
   catch (err) {
     res.status(500).json(err);
